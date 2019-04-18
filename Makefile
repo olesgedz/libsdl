@@ -4,7 +4,8 @@ CC=clang
 
 CFLAGS=-Wall -Wextra -Werror
 
-INCLUDES = -I$(HEADERS_DIRECTORY)
+SDL_HEADERS = include/
+INCLUDES = -I$(HEADERS_DIRECTORY) -I$(SDL_HEADERS)
 HEADERS_LIST =libsdl.h 
 
 DIRECTORY =  $(shell pwd)
@@ -14,7 +15,12 @@ HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
 SOURCES_DIRECTORY = srcs/
 
 SOURCES_LIST=ft_plot_line.c\
-			ft_put_pixel.c
+			ft_put_pixel.c\
+			ft_init_window.c\
+			ft_exit.c\
+			ft_input.c\
+			ft_surface_present.c\
+			ft_surface_clear.c
 
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 

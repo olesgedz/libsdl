@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_pixel.c                                     :+:      :+:    :+:   */
+/*   ft_surface_present.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 20:04:54 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/04/18 14:29:34 by jblack-b         ###   ########.fr       */
+/*   Created: 2019/04/18 14:09:27 by jblack-b          #+#    #+#             */
+/*   Updated: 2019/04/18 14:13:21 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libsdl.h"
 
-void			ft_image_set_pixel(t_sdl *sdl, t_point *p, int color)
+void	ft_surface_present(t_sdl *sdl)
 {
-		*(uint32_t *)(sdl->surface + (p->x + p->y * sdl->win_w)) = color;
+	SDL_UpdateTexture(sdl->texture, NULL,\
+		sdl->surface, sdl->win_w * sizeof(Uint32));
+	SDL_RenderCopy(sdl->renderer, sdl->texture, NULL, NULL);
+	SDL_RenderPresent(sdl->renderer);
 }

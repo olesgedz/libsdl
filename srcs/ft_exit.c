@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put_pixel.c                                     :+:      :+:    :+:   */
+/*   ft_exit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 20:04:54 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/04/18 14:29:34 by jblack-b         ###   ########.fr       */
+/*   Created: 2019/04/18 13:13:07 by jblack-b          #+#    #+#             */
+/*   Updated: 2019/04/18 13:20:32 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libsdl.h"
+#include <stdlib.h>
 
-void			ft_image_set_pixel(t_sdl *sdl, t_point *p, int color)
+void	ft_exit(int (*f)(void))
 {
-		*(uint32_t *)(sdl->surface + (p->x + p->y * sdl->win_w)) = color;
+	if (f)
+		f();
+	SDL_Quit();
+	exit(-1);
 }
