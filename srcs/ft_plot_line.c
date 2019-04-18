@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_plot_line.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 19:44:59 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/04/18 15:19:36 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/04/19 00:41:05 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libsdl.h"
 
-static int			ft_put_points(t_sdl *sdl,
+static int			ft_put_points(t_surface *surface,
 		t_line *l, t_point *p1, int color)
 {
-	ft_image_set_pixel(sdl, p1, color);
+	ft_put_pixel(surface, p1, color);
 	l->err2 = l->err;
 	if (l->err2 > -l->dx)
 	{
@@ -30,7 +30,7 @@ static int			ft_put_points(t_sdl *sdl,
 	return (0);
 }
 
-void				ft_plot_line(t_sdl *sdl,
+void				ft_plot_line(t_surface *surface,
 	t_point *p1, t_point *p2, int color)
 {
 	t_line	line;
@@ -47,6 +47,6 @@ void				ft_plot_line(t_sdl *sdl,
 	line.sy = (int)p1->y < (int)p2->y ? 1 : -1;
 	line.err = (line.dx > line.dy ? line.dx : -line.dy) / 2;
 	while (((int)p1->x != (int)p2->x || (int)p1->y != (int)p2->y))
-		if (ft_put_points(sdl, &line, p1, color))
+		if (ft_put_points(surface, &line, p1, color))
 			break ;
 }

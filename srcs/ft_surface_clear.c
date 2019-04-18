@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_surface_clear.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 14:15:21 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/04/18 14:18:50 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/04/19 01:03:16 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libsdl.h"
 
-void		ft_surface_clear(t_sdl *sdl)
+void		ft_surface_clear(t_surface *surface)
 {
-	ft_bzero(sdl->surface, sizeof(Uint32) * sdl->win_w * sdl->win_h);
+	ft_bzero(surface->data, sizeof(Uint32) * surface->width * surface->height);
 }

@@ -2,7 +2,7 @@ NAME=libsdl.a
 
 CC=clang
 
-CFLAGS=-Wall -Wextra -Werror
+CFLAGS= -g -Wall -Wextra -Werror
 
 SDL_HEADERS = include/
 INCLUDES = -I$(HEADERS_DIRECTORY) -I$(SDL_HEADERS)
@@ -20,7 +20,8 @@ SOURCES_LIST=ft_plot_line.c\
 			ft_exit.c\
 			ft_input.c\
 			ft_surface_present.c\
-			ft_surface_clear.c
+			ft_surface_clear.c\
+			ft_surface_create.c
 
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 
