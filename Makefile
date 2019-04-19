@@ -21,7 +21,8 @@ SOURCES_LIST=ft_plot_line.c\
 			ft_input.c\
 			ft_surface_present.c\
 			ft_surface_clear.c\
-			ft_surface_create.c
+			ft_surface_create.c\
+			ft_surface_combine.c
 
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 

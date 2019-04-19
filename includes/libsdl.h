@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libsdl.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 19:47:22 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/04/19 01:02:30 by olesgedz         ###   ########.fr       */
+/*   Updated: 2019/04/19 21:23:12 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,18 @@ typedef struct s_surface
 	size_t height;
 } t_surface;
 
+typedef struct s_size
+{
+	int width;
+	int height;
+} t_size;
+
+typedef struct s_rectangle
+{
+	t_point position;
+	t_size	size;
+}	t_rectangle;
+
 typedef struct s_sdl
 {
 	SDL_Window *window;
@@ -65,5 +77,7 @@ void			ft_exit(int (*f)(void));
 void			ft_input(t_sdl *sdl, int (*f)(t_sdl *sdl, SDL_Event *ev));
 void			ft_surface_present(t_sdl *sdl, t_surface *surface);
 void			ft_surface_clear(t_surface *surface);
-t_surface 		*ft_surface_create(int width, int height);
+t_surface		*ft_surface_create(int width, int height);
+t_surface		*ft_surface_combine(t_surface *dst,\
+					t_surface *src, t_rectangle *rect);
 #endif
