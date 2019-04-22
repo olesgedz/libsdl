@@ -22,7 +22,13 @@ SOURCES_LIST=ft_plot_line.c\
 			ft_surface_present.c\
 			ft_surface_clear.c\
 			ft_surface_create.c\
-			ft_surface_combine.c
+			ft_surface_combine.c\
+			ft_ppm_image_read.c\
+			ft_get_light.c\
+			ft_percent.c\
+			ft_get_color.c\
+			ft_hex_to_rgb.c\
+			ft_ppm_image_write.c
 
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 

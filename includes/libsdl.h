@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libsdl.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 19:47:22 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/04/19 21:23:12 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/04/23 01:03:17 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "SDL2/SDL.h"
+
+typedef struct s_rgba
+{
+	int r;
+	int g;
+	int b;
+	int a; 
+} t_rgba;
 
 
 typedef struct			s_line
@@ -80,4 +88,13 @@ void			ft_surface_clear(t_surface *surface);
 t_surface		*ft_surface_create(int width, int height);
 t_surface		*ft_surface_combine(t_surface *dst,\
 					t_surface *src, t_rectangle *rect);
+
+
+
+t_surface 		*ft_ppm_image_read(char *s);
+int 			ft_ppm_image_write(t_surface *surface);
+int				ft_get_light(int start, int end, double percentage);
+double			ft_percent(int start, int end, int current);
+int				ft_get_color(int c1, int c2, double p);
+t_rgba 			*ft_hex_to_rgb(int hex, int a);
 #endif
