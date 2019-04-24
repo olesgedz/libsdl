@@ -15,13 +15,9 @@
 void			ft_vline(t_surface *surface,\
 	t_point *p1, t_point *p2, int color)
 {	
-	int *pix = (int*) surface->data;
-	 p1->y = clamp(p1->y, 0, surface->height-1);
-	 p2->y = clamp(p2->y, 0,surface->height-1);
 	while (p1->y != p2->y)
 	{
-		//ft_put_pixel(surface, p1, color);
-		pix[p1->y* surface->width+p1->x] = color;
+		ft_put_pixel(surface, p1, color);
 		p1->y++;
 	}
 }
