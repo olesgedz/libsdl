@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libsdl.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 19:47:22 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/04/23 01:03:17 by olesgedz         ###   ########.fr       */
+/*   Updated: 2019/04/24 18:27:44 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,14 +82,12 @@ void			ft_plot_line(t_surface *surface,
 void			ft_put_pixel(t_surface *surface, t_point *p, int color);
 void			ft_init_window(t_sdl *sdl, size_t win_w, size_t win_h);
 void			ft_exit(int (*f)(void));
-void			ft_input(t_sdl *sdl, int (*f)(t_sdl *sdl, SDL_Event *ev));
+void			ft_input(void *main, int (*f)(void *main, SDL_Event *ev));
 void			ft_surface_present(t_sdl *sdl, t_surface *surface);
 void			ft_surface_clear(t_surface *surface);
 t_surface		*ft_surface_create(int width, int height);
 t_surface		*ft_surface_combine(t_surface *dst,\
 					t_surface *src, t_rectangle *rect);
-
-
 
 t_surface 		*ft_ppm_image_read(char *s);
 int 			ft_ppm_image_write(t_surface *surface);
