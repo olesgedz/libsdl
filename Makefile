@@ -29,7 +29,8 @@ SOURCES_LIST=ft_plot_line.c\
 			ft_get_color.c\
 			ft_hex_to_rgb.c\
 			ft_ppm_image_write.c\
-			ft_vline.c
+			ft_vline.c\
+			ft_plot_wline.c
 
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
 

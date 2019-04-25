@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 19:47:22 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/04/24 20:49:38 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/04/25 15:52:20 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,14 @@
 #define Intersect(x1,y1, x2,y2, x3,y3, x4,y4) ((struct xy) { \
 	vxs(vxs(x1,y1, x2,y2), (x1)-(x2), vxs(x3,y3, x4,y4), (x3)-(x4)) / vxs((x1)-(x2), (y1)-(y2), (x3)-(x4), (y3)-(y4)), \
 	vxs(vxs(x1,y1, x2,y2), (y1)-(y2), vxs(x3,y3, x4,y4), (y3)-(y4)) / vxs((x1)-(x2), (y1)-(y2), (x3)-(x4), (y3)-(y4)) })
+#define fpart(x) ((x) < 0 ? 1 - ((x) - floorf(x)) : (x) - floorf(x))
+#define rfpart(x) (1 - fpart(x))
 
+typedef struct		s_fpoint
+{
+	float			x;
+	float			y;
+}					t_fpoint;
 
 
 typedef struct s_rgba
@@ -115,4 +122,6 @@ int				ft_get_color(int c1, int c2, double p);
 t_rgba 			*ft_hex_to_rgb(int hex, int a);
 
 void			ft_vline(t_surface *surface, t_point *p1, t_point *p2, int color);
+void		ft_plot_wline(t_surface *surface,
+	t_fpoint *p0, t_fpoint *p1, int color);
 #endif
