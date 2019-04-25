@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libsdl.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 19:47:22 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/04/25 19:04:55 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/04/26 02:26:15 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 #include "SDL2/SDL.h"
 
 
-#define min(a,b)             (((a) < (b)) ? (a) : (b)) // min: Choose smaller of two scalars.
-#define max(a,b)             (((a) > (b)) ? (a) : (b)) // max: Choose greater of two scalars.
+#define MIN(a,b)             (((a) < (b)) ? (a) : (b)) // min: Choose smaller of two scalars.
+#define MAX(a,b)             (((a) > (b)) ? (a) : (b)) // max: Choose greater of two scalars.
 #define clamp(a, mi,ma)      min(max(a,mi),ma)         // clamp: Clamp value into set range.
 #define vxs(x0,y0, x1,y1)    ((x0)*(y1) - (x1)*(y0))   // vxs: Vector cross product
 // Overlap:  Determine whether the two number ranges overlap.
@@ -122,6 +122,7 @@ int				ft_get_light(int start, int end, double percentage);
 double			ft_percent(int start, int end, int current);
 int				ft_get_color(int c1, int c2, double p);
 t_rgba 			*ft_hex_to_rgb(int hex, int a);
+int				ft_rgb_to_hex(int r, int g, int b);
 
 void			ft_vline(t_surface *surface, t_point *p1, t_point *p2, int color);
 void		ft_plot_wline(t_surface *surface,
