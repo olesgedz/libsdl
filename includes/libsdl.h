@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 19:47:22 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/04/25 18:09:06 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/04/25 19:04:55 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ typedef struct s_sdl
 	SDL_Window *window;
 	SDL_Renderer *renderer;
 	SDL_Texture *texture;
+	Uint32 *pixels; 
+	int pitch;
 	t_surface *surface;
 	size_t win_w;
 	size_t win_h;
@@ -124,4 +126,7 @@ t_rgba 			*ft_hex_to_rgb(int hex, int a);
 void			ft_vline(t_surface *surface, t_point *p1, t_point *p2, int color);
 void		ft_plot_wline(t_surface *surface,
 	t_fpoint *p0, t_fpoint *p1, int color);
+
+void	ft_texture_present(t_sdl *sdl);
+Uint32 *ft_texture_lock(t_sdl *sdl);
 #endif
