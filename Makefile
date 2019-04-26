@@ -33,6 +33,7 @@ SOURCES_LIST=ft_plot_line.c\
 			ft_plot_wline.c\
 			ft_texture_lock.c\
 			ft_texture_present.c\
+			ft_texture_create.c\
 			ft_rgb_to_hex.c
 
 

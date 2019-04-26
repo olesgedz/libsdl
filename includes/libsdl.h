@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libsdl.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 19:47:22 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/04/26 02:26:15 by olesgedz         ###   ########.fr       */
+/*   Updated: 2019/04/26 21:07:31 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 #include "SDL2/SDL.h"
 
 
-#define MIN(a,b)             (((a) < (b)) ? (a) : (b)) // min: Choose smaller of two scalars.
-#define MAX(a,b)             (((a) > (b)) ? (a) : (b)) // max: Choose greater of two scalars.
+#define min(a,b)             (((a) < (b)) ? (a) : (b)) // min: Choose smaller of two scalars.
+#define max(a,b)             (((a) > (b)) ? (a) : (b)) // max: Choose greater of two scalars.
 #define clamp(a, mi,ma)      min(max(a,mi),ma)         // clamp: Clamp value into set range.
 #define vxs(x0,y0, x1,y1)    ((x0)*(y1) - (x1)*(y0))   // vxs: Vector cross product
 // Overlap:  Determine whether the two number ranges overlap.
@@ -78,6 +78,16 @@ typedef struct s_surface
 	size_t height;
 } t_surface;
 
+typedef struct s_texture
+{
+	SDL_Texture *sdl_texture;
+	Uint32 *pixels;
+	size_t width;
+	size_t height;
+	int pitch;
+} t_texture;
+
+
 typedef struct s_size
 {
 	int width;
@@ -94,9 +104,7 @@ typedef struct s_sdl
 {
 	SDL_Window *window;
 	SDL_Renderer *renderer;
-	SDL_Texture *texture;
-	Uint32 *pixels; 
-	int pitch;
+	t_texture *texture; 
 	t_surface *surface;
 	size_t win_w;
 	size_t win_h;
@@ -128,6 +136,7 @@ void			ft_vline(t_surface *surface, t_point *p1, t_point *p2, int color);
 void		ft_plot_wline(t_surface *surface,
 	t_fpoint *p0, t_fpoint *p1, int color);
 
-void	ft_texture_present(t_sdl *sdl);
-Uint32 *ft_texture_lock(t_sdl *sdl);
+void	ft_texture_present(t_sdl *sdl, t_texture *texture);
+Uint32 *ft_texture_lock(t_sdl *sdl, t_texture *texture);
+t_texture		*ft_texture_create(t_sdl *sdl, int width, int height);
 #endif
