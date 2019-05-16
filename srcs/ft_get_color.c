@@ -3,15 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_color.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 00:56:56 by olesgedz          #+#    #+#             */
-/*   Updated: 2019/04/23 00:57:26 by olesgedz         ###   ########.fr       */
+/*   Updated: 2019/05/16 18:46:52 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libsdl.h"
 
+/*
+*	Fucntion: mix two color based on precent
+*	Parameters: color in hex, color in hex, precent
+*	Return: result color as hex
+*/
 int				ft_get_color(int c1, int c2, double p)
 {
 	int r;

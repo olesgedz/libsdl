@@ -6,12 +6,14 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/24 20:32:54 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/04/26 21:12:31 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/05/16 19:25:28 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libsdl.h"
 
+
+//teeeesttt
 void			ft_vline(t_surface *surface,\
 	t_point *p1, t_point *p2, int color)
 {	

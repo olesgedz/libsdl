@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/23 00:59:06 by olesgedz          #+#    #+#             */
-/*   Updated: 2019/04/24 20:40:40 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/05/16 19:06:33 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 #include "fcntl.h"
 #include <stdio.h>
 #include <unistd.h>
+
+/*
+*	Fucntion: saves ppm image to hdd
+*	Parameters: surface to save
+*	Return: if was completed 
+*	! too slow, needs optimization
+*/
 
 int ft_ppm_image_write(t_surface *surface)
 {

@@ -6,11 +6,18 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/19 21:04:57 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/04/19 22:26:33 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/05/16 19:17:28 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libsdl.h"
+
+/*
+*	Fucntion: combines two surfaces within renf if rectangle
+*		 and only if value of src in that pixel isn't null
+*	Parameters: destination surface , source surface, area to work with in
+*	Return: combined surface in dst
+*/
 
 t_surface		*ft_surface_combine(t_surface *dst,\
 					t_surface *src, t_rectangle *rect)

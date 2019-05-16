@@ -6,11 +6,17 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 14:09:27 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/04/26 21:05:55 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/05/16 19:19:38 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libsdl.h"
+
+/*
+*	Fucntion: puts the surface on the screen
+*	Parameters: sdl, surface
+*	Return: none
+*/
 
 void	ft_surface_present(t_sdl *sdl, t_surface *surface)
 {

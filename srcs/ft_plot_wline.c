@@ -6,12 +6,18 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/25 15:39:46 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/04/25 18:08:56 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/05/16 19:03:07 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libsdl.h"
 
+/*
+*	Fucntion: draws line on the screen using Xiaolin Wu's line algorithm
+*	Parameters: surface, point 1, point 2, color of the line
+*	Return: none
+*	? Is it any better? I have no idea
+*/
 
 static void plot(t_surface *surface, int x, int y, float opacity, int color)
 {

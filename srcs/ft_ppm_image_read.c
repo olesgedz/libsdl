@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ppm_image_read.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/22 22:13:42 by olesgedz          #+#    #+#             */
-/*   Updated: 2019/04/23 00:54:48 by olesgedz         ###   ########.fr       */
+/*   Updated: 2019/05/16 19:04:31 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 #include "libft.h"
 #include <fcntl.h>
 #include <unistd.h>
+
+/*
+*	Fucntion: reads ppm image to surface
+*	Parameters: name of the file
+*	Return: t_surface
+*	! Work in progress doesnt work
+*/
 
 t_surface *ft_ppm_image_read(char *s)
 {
