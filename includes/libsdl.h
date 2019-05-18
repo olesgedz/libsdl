@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libsdl.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 19:47:22 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/04/26 21:07:31 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/05/18 02:40:10 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,32 @@ typedef struct		s_fpoint
 	float			x;
 	float			y;
 }					t_fpoint;
+
+
+typedef	struct				s_p3dc
+{
+	int						x;
+	int						y;
+	int						z;
+	int						w;
+	int						color;
+}							t_p3dc;
+
+typedef struct s_vector3db
+{
+	double					x;
+	double					y;
+	double					z;
+} t_vector3db;
+
+typedef struct				s_poly
+{
+	t_p3dc					p0;
+	t_p3dc					p1;
+	t_p3dc					p2;
+	t_vector3db		*normal;
+	int						color;
+}							t_poly;
 
 
 typedef struct s_rgba
@@ -139,4 +165,5 @@ void		ft_plot_wline(t_surface *surface,
 void	ft_texture_present(t_sdl *sdl, t_texture *texture);
 Uint32 *ft_texture_lock(t_sdl *sdl, t_texture *texture);
 t_texture		*ft_texture_create(t_sdl *sdl, int width, int height);
+void	triangle(t_poly *t, t_surface *surface, int offsetx, int offsety);
 #endif
