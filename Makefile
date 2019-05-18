@@ -5,7 +5,8 @@ CC=clang
 CFLAGS= -g -Wall -Wextra -Werror
 
 SDL_HEADERS = include/
-INCLUDES = -I$(HEADERS_DIRECTORY) -I$(SDL_HEADERS)
+LIBFT_HEADERS = ../libft/includes/
+INCLUDES = -I$(HEADERS_DIRECTORY) -I$(SDL_HEADERS) -I$(LIBFT_HEADERS)
 HEADERS_LIST =libsdl.h 
 
 DIRECTORY =  $(shell pwd)
