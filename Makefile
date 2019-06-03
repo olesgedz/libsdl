@@ -5,7 +5,9 @@ CC=clang
 CFLAGS= -g -Wall -Wextra -Werror
 
 SDL_HEADERS = include/
-INCLUDES = -I$(HEADERS_DIRECTORY) -I$(SDL_HEADERS)
+LIBFT_HEADERS = ../libft/includes/
+LIBMATH_HEADERS = ../libmath/includes/
+INCLUDES = -I$(HEADERS_DIRECTORY) -I$(SDL_HEADERS) -I$(LIBFT_HEADERS) -I$(LIBMATH_HEADERS)
 HEADERS_LIST =libsdl.h 
 
 DIRECTORY =  $(shell pwd)
@@ -34,7 +36,8 @@ SOURCES_LIST=ft_plot_line.c\
 			ft_texture_lock.c\
 			ft_texture_present.c\
 			ft_texture_create.c\
-			ft_rgb_to_hex.c
+			ft_rgb_to_hex.c\
+			ft_rasterizer.c
 
 
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
