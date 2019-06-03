@@ -6,7 +6,8 @@ CFLAGS= -g -Wall -Wextra -Werror
 
 SDL_HEADERS = include/
 LIBFT_HEADERS = ../libft/includes/
-INCLUDES = -I$(HEADERS_DIRECTORY) -I$(SDL_HEADERS) -I$(LIBFT_HEADERS)
+LIBMATH_HEADERS = ../libmath/includes/
+INCLUDES = -I$(HEADERS_DIRECTORY) -I$(SDL_HEADERS) -I$(LIBFT_HEADERS) -I$(LIBMATH_HEADERS)
 HEADERS_LIST =libsdl.h 
 
 DIRECTORY =  $(shell pwd)
