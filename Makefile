@@ -2,7 +2,7 @@ NAME=libsdl.a
 
 CC=clang
 
-CFLAGS= -g -Wall -Wextra -Werror
+CFLAGS= -g -O3 -Wall -Wextra -Werror
 
 SDL_HEADERS = include/
 INCLUDES = -I$(HEADERS_DIRECTORY) -I$(SDL_HEADERS)
