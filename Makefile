@@ -37,7 +37,8 @@ SOURCES_LIST=ft_plot_line.c\
 			ft_texture_present.c\
 			ft_texture_create.c\
 			ft_rgb_to_hex.c\
-			ft_rasterizer.c
+			ft_rasterizer.c\
+			ft_draw_poly.c
 
 
 SOURCES = $(addprefix $(SOURCES_DIRECTORY), $(SOURCES_LIST))
