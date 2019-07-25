@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libsdl.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 19:47:22 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/06/05 16:47:52 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/07/14 20:38:12 by olesgedz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,4 +166,5 @@ Uint32 *ft_texture_lock(t_sdl *sdl, t_texture *texture);
 t_texture		*ft_texture_create(t_sdl *sdl, int width, int height);
 void	triangle(t_poly *t, t_surface *surface, int offsetx, int offsety);
 void ft_draw_poly(t_surface *surface, t_point p0, t_point p1, t_point p2);
+void ft_line(t_surface *surface, t_point *p1, t_point *p2, int color);
 #endif
