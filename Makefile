@@ -2,7 +2,7 @@ NAME=libsdl.a
 
 CC=clang
 
-CFLAGS= -g -O3 -Wall -Wextra -Werror
+CFLAGS= -g -Wall -Wextra -Werror
 
 SDL_HEADERS = include/
 LIBFT_HEADERS = ../libft/includes/
