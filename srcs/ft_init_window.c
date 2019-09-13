@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_window.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lminta <lminta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 12:44:17 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/06/20 18:21:06 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/09/13 17:28:50 by lminta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libsdl.h"
 
 /*
-*	Fucntion: inits window of given size 
+*	Fucntion: inits window of given size
 *	Parameters: sdl, width, height of the window
 *	- creates sdl->surface for rendering
 *	- creates sdl->texture to put image on the screen
@@ -24,6 +24,7 @@
 
 void	ft_init_window(t_sdl *sdl, size_t win_w, size_t win_h)
 {
+	SDL_Init(SDL_INIT_EVERYTHING);
 	sdl->win_h = win_h;
 	sdl->win_w = win_w;
 	sdl->surface = ft_surface_create(win_w, win_h);
