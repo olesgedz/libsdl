@@ -8,7 +8,7 @@ SDL_HEADERS = include/
 LIBFT_HEADERS = ../libft/includes/
 LIBMATH_HEADERS = ../libmath/includes/
 INCLUDES = -I$(HEADERS_DIRECTORY) -I$(SDL_HEADERS) -I$(LIBFT_HEADERS) -I$(LIBMATH_HEADERS)
-HEADERS_LIST =libsdl.h 
+HEADERS_LIST =libsdl.h
 
 DIRECTORY =  $(shell pwd)
 HEADERS_DIRECTORY = includes/
@@ -31,14 +31,11 @@ SOURCES_LIST=ft_plot_line.c\
 			ft_get_color.c\
 			ft_hex_to_rgb.c\
 			ft_ppm_image_write.c\
-			ft_vline.c\
-			ft_plot_wline.c\
 			ft_texture_lock.c\
 			ft_texture_present.c\
 			ft_texture_create.c\
 			ft_rgb_to_hex.c\
 			ft_rasterizer.c\
-			ft_draw_poly.c\
 			ft_line.c
 
 

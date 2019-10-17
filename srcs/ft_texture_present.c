@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_texture_present.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lminta <lminta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/25 18:56:24 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/05/16 19:25:16 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/10/17 19:10:32 by lminta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libsdl.h"
 
 /*
-*	Fucntion: puts texture on the screen,  when writing to texture is needed 
-*	Parameters: sdl, texture
-*	Return: pointer to array of pixel that texture consist of 
+**	Fucntion: puts texture on the screen,  when writing to texture is needed
+**	Parameters: sdl, texture
+**	Return: pointer to array of pixel that texture consist of
 */
 
 void	ft_texture_present(t_sdl *sdl, t_texture *texture)

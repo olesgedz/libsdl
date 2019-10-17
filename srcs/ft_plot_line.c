@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_plot_line.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lminta <lminta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 19:44:59 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/05/16 19:02:16 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/10/17 19:00:53 by lminta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libsdl.h"
 
 /*
-*	Fucntion: draws line on the screen using Bresenham's line algorithm
-*	Parameters: surface, point 1, point 2, color of the line
-*	Return: none
+**	Fucntion: draws line on the screen using Bresenham's line algorithm
+**	Parameters: surface, point 1, point 2, color of the line
+**	Return: none
 */
 
 static int			ft_put_points(t_surface *surface,

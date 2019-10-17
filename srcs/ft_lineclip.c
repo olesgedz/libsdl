@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lineclip.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: olesgedz <olesgedz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lminta <lminta@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/17 02:14:57 by olesgedz          #+#    #+#             */
-/*   Updated: 2019/05/18 02:13:14 by olesgedz         ###   ########.fr       */
+/*   Updated: 2019/10/17 18:59:31 by lminta           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libsdl.h"
+
 /*
 ** Helper function to get a t_point with a size
 */
