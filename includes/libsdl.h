@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 19:47:22 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/10/31 18:57:14 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/10/31 21:31:01 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,17 +129,13 @@ typedef struct		s_sdl
 
 }					t_sdl;
 
-void				ft_plot_line(t_surface *surface,
+void				ft_plot_line(SDL_Surface *surface,
 t_point *p1, t_point *p2, int color);
-//void				ft_put_pixel(t_surface *surface, t_point *p, int color);
-void			ft_put_pixel(SDL_Surface * surface, t_point *p, int color);
+void				ft_put_pixel(SDL_Surface *surface, t_point *p, int color);
 void				ft_init_window(t_sdl *sdl, size_t win_w, size_t win_h);
 void				ft_exit(int (*f)(void));
 void				ft_input(void *main, int (*f)(void *main, SDL_Event *ev));
-//void				ft_surface_present(t_sdl *sdl, t_surface *surface);
-void	ft_surface_present(t_sdl *sdl, SDL_Surface *surface);
-
-
+void				ft_surface_present(t_sdl *sdl, SDL_Surface *surface);
 void				ft_surface_clear(t_surface *surface);
 t_surface			*ft_surface_create(int width, int height);
 t_surface			*ft_surface_combine(t_surface *dst,
@@ -153,7 +149,7 @@ t_rgba				*ft_hex_to_rgb(int hex, int a);
 int					ft_rgb_to_hex(int r, int g, int b);
 void				ft_vline(t_surface *surface, t_point *p1,
 t_point *p2, int color);
-void				ft_plot_wline(t_surface *surface,
+void				ft_plot_wline(SDL_Surface *surface,
 t_fpoint *p0, t_fpoint *p1, int color);
 void				ft_texture_present(t_sdl *sdl, t_texture *texture);
 Uint32				*ft_texture_lock(t_sdl *sdl, t_texture *texture);

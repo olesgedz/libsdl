@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_plot_line.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lminta <lminta@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 19:44:59 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/10/17 19:00:53 by lminta           ###   ########.fr       */
+/*   Updated: 2019/10/31 21:27:27 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 **	Return: none
 */
 
-static int			ft_put_points(t_surface *surface,
+static int			ft_put_points(SDL_Surface *surface,
 		t_line *l, t_point *p1, int color)
 {
 	ft_put_pixel(surface, p1, color);
@@ -36,7 +36,7 @@ static int			ft_put_points(t_surface *surface,
 	return (0);
 }
 
-void				ft_plot_line(t_surface *surface,
+void				ft_plot_line(SDL_Surface *surface,
 	t_point *p1, t_point *p2, int color)
 {
 	t_line	line;
