@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_surface_present.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lminta <lminta@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 14:09:27 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/10/17 19:09:52 by lminta           ###   ########.fr       */
+/*   Updated: 2019/10/31 19:25:58 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,13 @@
 **	Return: none
 */
 
-void	ft_surface_present(t_sdl *sdl, t_surface *surface)
+void	ft_surface_present(t_sdl *sdl, SDL_Surface *surface)
 {
-	SDL_UpdateTexture(sdl->texture->sdl_texture, NULL,\
-		surface->data, surface->width * sizeof(Uint32));
-	SDL_RenderCopy(sdl->renderer, sdl->texture->sdl_texture, NULL, NULL);
+
+	SDL_UpdateTexture(sdl->texture, NULL,\
+		surface->pixels, surface->pitch);
+	SDL_RenderCopy(sdl->renderer, sdl->texture, NULL, NULL);
+
 	SDL_RenderPresent(sdl->renderer);
+	SDL_UpdateWindowSurface(sdl->window);
 }

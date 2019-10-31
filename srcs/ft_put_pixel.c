@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put_pixel.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lminta <lminta@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 20:04:54 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/10/17 19:03:48 by lminta           ###   ########.fr       */
+/*   Updated: 2019/10/31 18:56:45 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 **	? should it use inline prefix? need to test that
 */
 
-void			ft_put_pixel(t_surface *surface, t_point *p, int color)
+void			ft_put_pixel(SDL_Surface * surface, t_point *p, int color)
 {
-	*(((Uint32 *)surface->data) + (p->x + p->y * surface->width)) = color;
+	*(((Uint32 *)surface->pixels) + (p->x + p->y * surface->w)) = color;
 }

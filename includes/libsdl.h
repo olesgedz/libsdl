@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libsdl.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lminta <lminta@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 19:47:22 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/10/17 18:52:33 by lminta           ###   ########.fr       */
+/*   Updated: 2019/10/31 18:57:14 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,18 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include "SDL2/SDL.h"
+
+#if SDL_BYTEORDER == SDL_BIG_ENDIAN
+	#define RMASK  	0xff000000
+	#define GMASK  	0x00ff0000
+	#define BMASK 	0x0000ff00
+    #define AMASK	0x000000ff
+#else
+	#define RMASK  	0x000000ff
+	#define GMASK  	0x0000ff00
+	#define BMASK 	0x00ff0000
+    #define AMASK	0xff000000
+#endif
 
 typedef struct		s_fpoint
 {
@@ -109,8 +121,8 @@ typedef struct		s_sdl
 {
 	SDL_Window		*window;
 	SDL_Renderer	*renderer;
-	t_texture		*texture;
-	t_surface		*surface;
+	SDL_Texture		*texture;
+	SDL_Surface		*surface;
 	size_t			win_w;
 	size_t			win_h;
 	t_mouse			mouse;
@@ -119,11 +131,15 @@ typedef struct		s_sdl
 
 void				ft_plot_line(t_surface *surface,
 t_point *p1, t_point *p2, int color);
-void				ft_put_pixel(t_surface *surface, t_point *p, int color);
+//void				ft_put_pixel(t_surface *surface, t_point *p, int color);
+void			ft_put_pixel(SDL_Surface * surface, t_point *p, int color);
 void				ft_init_window(t_sdl *sdl, size_t win_w, size_t win_h);
 void				ft_exit(int (*f)(void));
 void				ft_input(void *main, int (*f)(void *main, SDL_Event *ev));
-void				ft_surface_present(t_sdl *sdl, t_surface *surface);
+//void				ft_surface_present(t_sdl *sdl, t_surface *surface);
+void	ft_surface_present(t_sdl *sdl, SDL_Surface *surface);
+
+
 void				ft_surface_clear(t_surface *surface);
 t_surface			*ft_surface_create(int width, int height);
 t_surface			*ft_surface_combine(t_surface *dst,
