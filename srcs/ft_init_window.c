@@ -29,7 +29,7 @@ void	ft_init_window(t_sdl *sdl, size_t win_w, size_t win_h)
 	sdl->win_w = win_w;
 	sdl->surface = SDL_CreateRGBSurface(0, win_w, win_h, 32,\
 	RMASK, GMASK, BMASK, AMASK);
-	sdl->window = SDL_CreateWindow("ОГОЛИ ЖОПУ ПОЖИЛОГО",
+	sdl->window = SDL_CreateWindow("RT",
 	SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
 	win_w, win_h, 0);
 	sdl->renderer = SDL_CreateRenderer(sdl->window, -1,
