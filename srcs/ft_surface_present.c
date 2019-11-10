@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 14:09:27 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/10/31 19:25:58 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/11/10 19:41:21 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ void	ft_surface_present(t_sdl *sdl, SDL_Surface *surface)
 	SDL_RenderCopy(sdl->renderer, sdl->texture, NULL, NULL);
 
 	SDL_RenderPresent(sdl->renderer);
-	SDL_UpdateWindowSurface(sdl->window);
+	//SDL_UpdateWindowSurface(sdl->window);
 }
