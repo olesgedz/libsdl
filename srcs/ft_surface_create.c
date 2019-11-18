@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_surface_create.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lminta <lminta@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/19 00:29:45 by olesgedz          #+#    #+#             */
-/*   Updated: 2019/10/17 19:12:05 by lminta           ###   ########.fr       */
+/*   Updated: 2019/11/18 13:16:00 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,11 @@
 **	Return: malloced surface
 */
 
-t_surface	*ft_surface_create(int width, int height)
+SDL_Surface	*ft_surface_create(int width, int height)
 {
-	t_surface *new_surface;
+	SDL_Surface *new_surface;
 
-	if (!(new_surface = ft_memalloc(sizeof(t_surface))))
-		return (0);
-	if (!(new_surface->data = ft_memalloc(sizeof(Uint32) * width * height)))
-		return (0);
-	new_surface->height = height;
-	new_surface->width = width;
+	new_surface = SDL_CreateRGBSurface(0, width, height, 32,\
+	RMASK, GMASK, BMASK, AMASK);
 	return (new_surface);
 }

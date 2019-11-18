@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_window.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lminta <lminta@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/18 12:44:17 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/11/06 19:46:14 by lminta           ###   ########.fr       */
+/*   Updated: 2019/11/18 15:28:00 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ void	ft_init_window(t_sdl *sdl, size_t win_w, size_t win_h)
 	SDL_Init(SDL_INIT_EVERYTHING);
 	sdl->win_h = win_h;
 	sdl->win_w = win_w;
-	sdl->surface = SDL_CreateRGBSurface(0, win_w, win_h, 32,\
-	RMASK, GMASK, BMASK, AMASK);
+	sdl->surface = ft_surface_create(win_w, win_h);
 	sdl->window = SDL_CreateWindow("RT",
 	SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
 	win_w, win_h, 0);
