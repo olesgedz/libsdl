@@ -6,7 +6,7 @@
 /*   By: jblack-b <jblack-b@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 19:47:22 by jblack-b          #+#    #+#             */
-/*   Updated: 2019/11/18 13:15:54 by jblack-b         ###   ########.fr       */
+/*   Updated: 2019/12/12 20:05:10 by jblack-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@
 # include <stdio.h>
 # include "SDL2/SDL.h"
 
-#if SDL_BYTEORDER == SDL_BIG_ENDIAN
-	#define RMASK  	0xff000000
-	#define GMASK  	0x00ff0000
-	#define BMASK 	0x0000ff00
-    #define AMASK	0x000000ff
-#else
-	#define RMASK  	0x000000ff
-	#define GMASK  	0x0000ff00
-	#define BMASK 	0x00ff0000
-    #define AMASK	0xff000000
-#endif
+# if SDL_BYTEORDER == SDL_BIG_ENDIAN
+#  define RMASK	0xff000000
+#  define GMASK	0x00ff0000
+#  define BMASK	0x0000ff00
+#  define AMASK	0x000000ff
+# else
+#  define RMASK	0x000000ff
+#  define GMASK	0x0000ff00
+#  define BMASK	0x00ff0000
+#  define AMASK	0xff000000
+# endif
 
 typedef struct		s_fpoint
 {
